@@ -1,0 +1,6 @@
+set surround
+set rnu
+set easymotion
+imap jj <Esc>
+let mapleader = " "
+map <Leader> <Plug>(easymotion-prefix)
