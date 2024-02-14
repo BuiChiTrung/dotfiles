@@ -1,5 +1,6 @@
 set surround
-set rnu
+set relativenumber
+set number
 set easymotion
 imap jj <Esc>
 let mapleader = " "

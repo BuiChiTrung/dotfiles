@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 function symlink_dotfiles() {
   for i in $(find ~+ -maxdepth 1 -name '.*' ! -name '.DS_Store' ! -name '.gitignore' -type f)
   do
