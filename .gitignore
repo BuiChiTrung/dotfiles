@@ -1,2 +1,5 @@
 ./.idea
+.profile
+.zshrc
+.bashrc
 .DS_Store
