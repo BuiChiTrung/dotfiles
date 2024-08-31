@@ -65,7 +65,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-
 " Use tab key to switch tab
 nmap gt nmap gT
 " VIMSCRIPT -------------------------------------------------------------- {{{
