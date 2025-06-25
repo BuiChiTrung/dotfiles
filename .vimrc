@@ -56,7 +56,6 @@ set history=1000
 
 " }}}
 inoremap jk <Esc>
-inoremap kj <Esc>
 inoremap jj <Esc>
 
 let mapleader = " "
@@ -82,3 +81,16 @@ augroup END
 " More Vimscripts code goes here.
 
 " }}}
+
+
+" Paste from register 'a' using <leader>pa
+nnoremap <leader>ap "ap
+nnoremap <leader>0p "0p
+nnoremap <leader>1p "1p
+nnoremap <leader>2p "2p
+nnoremap <leader>r :registers<CR>
+vnoremap <leader>y "+y
+nnoremap <leader>y "+yy
+nnoremap <leader>p "+p
+
+
