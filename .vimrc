@@ -1,13 +1,17 @@
 syntax on
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
+
+set relativenumber
 
 " Add numbers to each line on the left-hand side.
 set number
-
-" Highlight cursor line underneath the cursor horizontally.
-set cursorline
-
-" Highlight cursor line underneath the cursor vertically.
-set cursorcolumn
 
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
@@ -19,11 +23,7 @@ set nowrap
 set incsearch
 
 " Ignore capital letters during search.
-set ignorecase
-
-" Override the ignorecase option if searching for capital letters.
-" This will allow you to search specifically for capital letters.
-set smartcase
+set ignorecase smartcase
 
 " Show partial command you type in the last line of the screen.
 set showcmd
@@ -55,17 +55,22 @@ set history=1000
 " Mappings code goes here.
 
 " }}}
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L $
 inoremap jk <Esc>
 inoremap jj <Esc>
 
 let mapleader = " "
 noremap <Space> <Leader>
-map <Leader> <Plug>(easymotion-prefix)
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+noremap <leader>c :noh<CR>
 
 " Use tab key to switch tab
 nmap gt nmap gT
@@ -82,15 +87,29 @@ augroup END
 
 " }}}
 
+nnoremap <leader><leader>wq :wq<CR>
+nnoremap <leader><leader>q :q!<CR>
 
 " Paste from register 'a' using <leader>pa
 nnoremap <leader>ap "ap
 nnoremap <leader>0p "0p
 nnoremap <leader>1p "1p
 nnoremap <leader>2p "2p
+nnoremap <leader>3p "3p
 nnoremap <leader>r :registers<CR>
 vnoremap <leader>y "+y
 nnoremap <leader>y "+yy
 nnoremap <leader>p "+p
 
+" Obsidian - Techdebt: cannot use easy motion and register leader mapping
+
+" Easy motion
+map <Leader> <Plug>(easymotion-prefix)
+nnoremap <leader>s <leader><leader>s
+nnoremap <leader>j <leader><leader>j
+nnoremap <leader>k <leader><leader>k
+nnoremap <leader>w <leader><leader>w
+nnoremap <leader>b <leader><leader>b
+nnoremap <leader>e <leader><leader>e
+nnoremap <leader>ge <leader><leader>ge
 
